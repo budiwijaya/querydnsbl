@@ -5,11 +5,14 @@
 LISTED=listed
 LOGFILE=logfile.txt
 
-#Please choose the DNSBL you would like to check agains
+# Hostname of DNSBL server available on the internet:
+# - zen.spamhaus.org
+# - dnsbl-1.uceprotect.net
+# - b.barracudacentral.org
 #
-BLLIST=b.barracudacentral.org
-#BLLIST=zen.spamhaus.org
-#BLLIST=dnsbl-1.uceprotect.net
+# Default to b.barracudacentral.org if BLLIST is not
+# specified
+[ -z "$BLLIST" ] && BLLIST=b.barracudacentral.org
 
 #Example:
 # Subnet 203.114.224.0 - 203.114.225.0
@@ -18,10 +21,10 @@ BLLIST=b.barracudacentral.org
 # XX=224
 # YY=225
 
-SUB1=###
-SUB2=###
-XX=##
-YY=##
+[ -z "$SUB1" ] && SUB1="0"
+[ -z "$SUB2" ] && SUB2="0"
+[ -z "$XX" ] && XX="0"
+[ -z "$YY" ] && YY="0"
 
 for (( y=$XX; y<=$YY; y++ ))
 do
